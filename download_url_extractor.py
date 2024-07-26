@@ -1,7 +1,8 @@
 # Downloadlink exrtactor
 
 from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
+# from urllib.request import Request, urlopen
+import requests
 import re
 
 # Have the target URL
@@ -9,11 +10,14 @@ url = "https://coolrom.com.au/roms/psx/39719/Tekken_3.php"
 
 # Retrieve the URL data and decode to UTF-8
 # It is important to add a header to act as a browser, otherwise a 403 will come as response
-page = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-result = urlopen(page).read().decode('utf-8')
+# page = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+# result = urlopen(page).read().decode('utf-8')
+result = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+
 
 # Create a new BS object
-soup = BeautifulSoup(result, "html.parser")
+# soup = BeautifulSoup(result, "html.parser")
+soup = BeautifulSoup(result.content, "html.parser")
 
 # Retrieve only the "script" tag sections of the page text calling the repr method
 page_script = soup.find_all("script").__repr__()
