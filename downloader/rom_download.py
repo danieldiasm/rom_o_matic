@@ -1,4 +1,5 @@
 # ROM Download Class
+import hashlib
 
 class ROM:
 
@@ -22,19 +23,21 @@ class ROM:
         pass
 
     def make_hash(self):
-        pass
+        hash_obj = hashlib(self.title)
+        self.id = str(hash_obj.hexdigest())
 
-    def set_download_state(self):
-        pass
+    def set_download_state(self, status> bool) -> bool:
+        self.download_status = status
+        return self.download_status
 
     def get_download_state(self):
-        pass
+        return self.download_status
 
-    def get_download_url(self):
-        pass
+    def get_download_url(self) -> str:
+        return self.download_url
 
-    def get_download_title(self):
-        pass
+    def get_download_title(self) -> str:
+        return self.title
 
-    def get_download_id(self):
-        pass
+    def get_download_id(self) -> str:
+        return self.id
