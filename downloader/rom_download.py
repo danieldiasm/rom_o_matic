@@ -28,7 +28,7 @@ class ROM:
         pass
 
     def make_hash(self):
-        hash_obj = hashlib(self.title)
+        hash_obj = hashlib.md5(bytes(self.rom_page_url, 'utf-8'))
         self.id = str(hash_obj.hexdigest())
 
     def set_download_state(self, status> bool) -> bool:
