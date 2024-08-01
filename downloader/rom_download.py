@@ -1,5 +1,6 @@
 # ROM Download Class
 import hashlib
+import url_extractor
 
 class ROM:
 
@@ -14,12 +15,16 @@ class ROM:
         self.game_data = {}
     
     def extract_download_url(self):
-        pass
+        extractor = url_extractor.Page(page_url= self.rom_page_url)
+        self.bs4_page = extractor.get_bs4_page()
+        self.download_url = extractor.extract_download_url()
 
     def extract_game_data(self):
+        # TODO This should be worked on another branch
         pass
 
     def download_rom(self):
+        # TODO This should be worked on another branch
         pass
 
     def make_hash(self):

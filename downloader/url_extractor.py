@@ -16,11 +16,13 @@ class Page:
         return requests.get(self.page_url, headers={'User-Agent': 'Mozilla/5.0'})
     
     def get_bs4_page(self):
+        # Didn't add None validation to be possible to refresh the url_data
         url_data = self.get_url_data()
         self.bs4_page = BeautifulSoup(url_data, "html.parser")
 
     def extract_download_url(self):
-        self.get_bs4_page()
+        if self.bs4_page is None:
+            self.get_bs4_page()
         page_script = self.get_bs4_page.find_all("script").__repr__()
         link = re.search('window\.open\(".*", "_self"\);', page_script).group()
         start_index = link.find('"') + 1
