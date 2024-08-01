@@ -1,6 +1,11 @@
 # ROM Download Class
+
+# TODO Documentation
+# TODO Docstrings
+# TODO Logging
+
 import hashlib
-import url_extractor
+import downloader.url_extractor as url_extractor
 
 class ROM:
 
@@ -19,6 +24,7 @@ class ROM:
         self.bs4_page = extractor.get_bs4_page()
         self.download_url = extractor.extract_download_url()
 
+
     def extract_game_data(self):
         # TODO This should be worked on another branch
         pass
@@ -31,7 +37,7 @@ class ROM:
         hash_obj = hashlib.md5(bytes(self.rom_page_url, 'utf-8'))
         self.id = str(hash_obj.hexdigest())
 
-    def set_download_state(self, status> bool) -> bool:
+    def set_download_state(self, status: bool) -> bool:
         self.download_status = status
         return self.download_status
 
