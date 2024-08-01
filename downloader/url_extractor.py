@@ -34,8 +34,3 @@ class Page:
         end_index = link[start_index:].find('"') + start_index
         self.download_url = link[start_index:end_index]
         return self.download_url
-
-
-
-# Have the target URL
-# url = "https://coolrom.com.au/roms/psx/39719/Tekken_3.php"
