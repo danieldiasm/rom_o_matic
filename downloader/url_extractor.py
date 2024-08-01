@@ -3,6 +3,7 @@
 # TODO Documentation
 # TODO Docstrings
 # TODO Logging
+# TODO Tests
 
 from bs4 import BeautifulSoup
 import requests

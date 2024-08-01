@@ -3,6 +3,7 @@
 # TODO Documentation
 # TODO Docstrings
 # TODO Logging
+# TODO Tests
 
 import hashlib
 import downloader.url_extractor as url_extractor
