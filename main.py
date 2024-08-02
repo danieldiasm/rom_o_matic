@@ -1,11 +1,11 @@
-from downloader.rom_download import ROM
+from cool_rom.rom_data import ROM
 
-Tekken3_ROM = ROM("Res Evil 4", "https://coolrom.com.au/roms/atari2600/16167/Halloween_(Sexta_Fiera_13).php", "/downloadpath/placeholder")
+ResEvil4_ROM = ROM("Res Evil 4", "https://coolrom.com.au/roms/psx/68727/Resident_Evil_(Europe).php", "/downloadpath/placeholder")
 
-Tekken3_ROM.extract_download_url()
+ResEvil4_ROM.extract_download_url()
 
-url = Tekken3_ROM.get_download_url()
-game_data = Tekken3_ROM.get_game_data()
+url = ResEvil4_ROM.get_download_url()
+game_data = ResEvil4_ROM.get_game_data()
 
 print(url)
 print(game_data)
