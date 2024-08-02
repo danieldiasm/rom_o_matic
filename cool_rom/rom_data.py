@@ -6,8 +6,8 @@
 # TODO Tests
 
 import hashlib
-import downloader.url_extractor as url_extractor
-import downloader.data_extractor as data_extractor
+import cool_rom.url_extractor as url_extractor
+import cool_rom.data_extractor as data_extractor
 
 class ROM:
 
