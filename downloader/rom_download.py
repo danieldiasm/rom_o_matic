@@ -21,9 +21,10 @@ class ROM:
         self.bs4_page = None
         self.game_data = {}
 
+# Particular Methods
 
     def extract_download_url(self):
-        extractor = url_extractor.Page(page_url= self.rom_page_url)
+        extractor = url_extractor.Page(page_url=self.rom_page_url)
         self.bs4_page = extractor.get_bs4_page()
         self.download_url = extractor.extract_download_url()
 
@@ -41,11 +42,13 @@ class ROM:
         hash_obj = hashlib.md5(bytes(self.rom_page_url, 'utf-8'))
         self.id = str(hash_obj.hexdigest())
 
+# Setters
 
     def set_download_state(self, status: bool) -> bool:
         self.download_status = status
         return self.download_status
 
+# Getters
 
     def get_download_state(self):
         return self.download_status
@@ -61,3 +64,7 @@ class ROM:
 
     def get_download_id(self) -> str:
         return self.id
+    
+    def get_game_data(self) -> dict:
+        self.extract_game_data()
+        return self.game_data
