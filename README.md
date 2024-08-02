@@ -8,6 +8,8 @@
 
 This is a tool for scraping available game titles and automatic downloading from most common and open to public websites.
 
+There will be a main downloader tool and a scrapping manager tool. The scrapping manager can have plug-ins which is a scraper for a certain website.
+
 <br>
 
 ### Purpose
