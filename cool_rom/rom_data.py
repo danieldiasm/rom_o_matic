@@ -11,9 +11,9 @@ import cool_rom.data_extractor as data_extractor
 
 class ROM:
 
-    def __init__(self, title, rom_page_url, download_path) -> None:
+    def __init__(self, label, rom_page_url, download_path) -> None:
         self.id = None
-        self.title = title
+        self.label = label
         self.rom_page_url = rom_page_url
         self.download_url = None
         self.download_status = False
@@ -23,10 +23,10 @@ class ROM:
 
 # Particular Methods
 
-    def extract_download_url(self):
+    def extract_game_download_url(self):
         extractor = url_extractor.Page(page_url=self.rom_page_url)
         self.bs4_page = extractor.get_bs4_page()
-        self.download_url = extractor.extract_download_url()
+        self.download_url = extractor.extract_game_download_url()
 
 
     def extract_game_data(self):
@@ -35,7 +35,7 @@ class ROM:
 
     def download_rom(self):
         # TODO This should be worked on another branch
-        pass
+        pass # TODO To be removed
 
 
     def make_hash(self):
@@ -46,25 +46,26 @@ class ROM:
 
     def set_download_state(self, status: bool) -> bool:
         self.download_status = status
-        return self.download_status
+        return self.download_status # TODO To be removed
 
 # Getters
 
     def get_download_state(self):
-        return self.download_status
+        return self.download_status # TODO To be removed
 
 
     def get_download_url(self) -> str:
         return self.download_url
 
 
-    def get_download_title(self) -> str:
-        return self.title
+    def get_rom_label(self) -> str:
+        return self.label
 
 
     def get_download_id(self) -> str:
-        return self.id
+        return self.id # TODO To be removed
     
+
     def get_game_data(self) -> dict:
         self.extract_game_data()
         return self.game_data

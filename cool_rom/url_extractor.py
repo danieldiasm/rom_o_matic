@@ -28,7 +28,7 @@ class Page:
         self.bs4_page = BeautifulSoup(url_data.content, "html.parser")
 
 
-    def extract_download_url(self):
+    def extract_game_download_url(self):
         if self.bs4_page is None:
             self.load_bs4_page()
         page_script = self.bs4_page.find_all("script").__repr__()
